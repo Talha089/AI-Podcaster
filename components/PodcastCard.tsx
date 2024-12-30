@@ -1,17 +1,15 @@
+import { PodcastCardProps } from '@/types'
 import Image from 'next/image'
 import React from 'react'
 
-const PodcastCard = ({ imgURL, title, description, podcastId }: {
-    imgURL: string,
-    title: string,
-    description: string,
-    podcastId: number,
-}) => {
+const PodcastCard = ({ imgUrl, title, description, podcastId }:
+    PodcastCardProps
+) => {
     return (
         <div className='cursor-pont'>
             <figure className='flex flex-col gap-2'>
                 <Image
-                    src={imgURL}
+                    src={imgUrl}
                     width={174}
                     height={174}
                     alt={title}
