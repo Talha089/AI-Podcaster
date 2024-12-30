@@ -40,10 +40,10 @@ const PodcastDetails = ({ params: { podcastId } }: {
                     <h2 className='text-16 font-bold text-white-1'>{podcast?.views} </h2>
                 </figure>
             </header>
-        
+
             <PodcastDetailPlayer
                 isOwner={isOwner}
-                podcastid={podcast._id}
+                podcastId={podcast._id}
                 {...podcast} />
 
             <p className='text-white-2 text-16 pb-8 pt-[45px] font-medium max-md:text-center'>
