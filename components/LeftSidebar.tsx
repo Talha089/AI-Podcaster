@@ -10,14 +10,18 @@ import { sidebarLinks } from '@/constants'
 import { usePathname, useRouter } from 'next/navigation'
 import { SignedIn, SignedOut, useClerk } from '@clerk/nextjs'
 import { Button } from './ui/button'
+import { useAudio } from '@/providers/AudioProvider'
 
 const LeftSidebar = () => {
     const pathname = usePathname();
     const router = useRouter();
+    const { audio } = useAudio();
 
     const { signOut } = useClerk();
     return (
-        <section className='left_sidebar'>
+        <section className={cn('left_sidebar h-[calc(100vh-5px]', {
+            'h-[calc(100vh-140px)]': audio?.audioUrl
+        })}>
             <nav className='flex flex-col gap-6'>
                 <Link href="/" className='flex cursor-pointer items-center gap-1 pb-10 max-lg:justify-center'>
                     <Image src="/icons/logo.svg" alt='logo' width={23} height={27} />
